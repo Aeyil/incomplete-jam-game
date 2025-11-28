@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cee48fqjyr01u"]
+
+[ext_resource type="Script" uid="uid://bm1c0v01spuvx" path="res://core/gameplay_manager.gd" id="1_er0oi"]
+[ext_resource type="Script" uid="uid://chptt4vb8ik8p" path="res://board/chess_board.gd" id="2_wvq6k"]
+[ext_resource type="PackedScene" uid="uid://6j0qjseddsm7" path="res://board/cell.tscn" id="3_0hpuc"]
+
+[node name="GameplayScene" type="Control" node_paths=PackedStringArray("board")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_er0oi")
+board = NodePath("Board")
+
+[node name="Board" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -400.0
+offset_right = 400.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_wvq6k")
+cell_object = ExtResource("3_0hpuc")
+
+[node name="PauseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -49.75
+offset_top = -60.0
+offset_right = 49.75
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PAUSE"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

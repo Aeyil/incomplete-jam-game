@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://6j0qjseddsm7"]
+
+[ext_resource type="Script" uid="uid://blm4yqxc634c1" path="res://board/cell.gd" id="1_yh0nt"]
+
+[node name="Cell" type="Panel" node_paths=PackedStringArray("cell_button")]
+custom_minimum_size = Vector2(45, 45)
+script = ExtResource("1_yh0nt")
+cell_button = NodePath("InteractableButton")
+
+[node name="InteractableButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractableOverlay" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DamageOverlay" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="InteractableButton" to="." method="_on_interactable_button_pressed"]
