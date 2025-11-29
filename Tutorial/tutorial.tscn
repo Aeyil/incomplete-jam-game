@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqplwl5ytdgoe"]
+[gd_scene load_steps=9 format=3 uid="uid://dqplwl5ytdgoe"]
 
 [ext_resource type="Script" uid="uid://51ngy8xfr0tq" path="res://Tutorial/tutorial_menu.gd" id="1_owc84"]
+[ext_resource type="Texture2D" uid="uid://dvs55ard58q33" path="res://assets/PawnWhite.png" id="2_8h6nf"]
+[ext_resource type="Texture2D" uid="uid://eva5p2inppr8" path="res://assets/RookBlack.png" id="3_rso3y"]
+[ext_resource type="Texture2D" uid="uid://b7k7p70m26cqv" path="res://assets/KnightWhite.png" id="4_n4ihd"]
+[ext_resource type="Texture2D" uid="uid://b54t76y7ewrns" path="res://assets/BishopBlack.png" id="5_itvf6"]
+[ext_resource type="Texture2D" uid="uid://cmeblvr3x5lby" path="res://assets/QueenWhite.png" id="6_gotrj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gg8w"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8ew0"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -48,6 +59,14 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/pawnExplain/pawnImage"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_8h6nf")
+expand_mode = 5
+
 [node name="pawnText" type="Label" parent="HBoxContainer/VBoxContainer/pawnExplain"]
 custom_minimum_size = Vector2(750, 160)
 layout_mode = 2
@@ -68,6 +87,15 @@ horizontal_alignment = 1
 [node name="rookImage" type="Panel" parent="HBoxContainer/VBoxContainer/rookExplain"]
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gg8w")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/rookExplain/rookImage"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_rso3y")
+expand_mode = 5
 
 [node name="rookText" type="Label" parent="HBoxContainer/VBoxContainer/rookExplain"]
 custom_minimum_size = Vector2(750, 160)
@@ -90,6 +118,14 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/knightExplain/KnightImage"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_n4ihd")
+expand_mode = 5
+
 [node name="knightText" type="Label" parent="HBoxContainer/VBoxContainer/knightExplain"]
 custom_minimum_size = Vector2(750, 160)
 layout_mode = 2
@@ -110,6 +146,15 @@ horizontal_alignment = 1
 [node name="BishopImage" type="Panel" parent="HBoxContainer/VBoxContainer/bishopExplain"]
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w8ew0")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/bishopExplain/BishopImage"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_itvf6")
+expand_mode = 5
 
 [node name="bishopText" type="Label" parent="HBoxContainer/VBoxContainer/bishopExplain"]
 custom_minimum_size = Vector2(750, 160)
@@ -131,6 +176,14 @@ horizontal_alignment = 1
 [node name="QueenImage" type="Panel" parent="HBoxContainer/VBoxContainer/queenExplain"]
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/queenExplain/QueenImage"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_gotrj")
+expand_mode = 5
 
 [node name="queenText" type="Label" parent="HBoxContainer/VBoxContainer/queenExplain"]
 custom_minimum_size = Vector2(750, 160)
