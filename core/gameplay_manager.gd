@@ -21,23 +21,19 @@ func start():
 	SignalHub.turn_selection_phase.emit(current_player,current_turn)
 
 
-func on_cell_chosen(cell_number: int):
-	print(cell_number)
-	# TODO: Call logic for pieces/board interactions
+func on_cell_chosen(cell: Cell):
+	print(cell.cell_number)
 	end_turn()
 
 
 func on_piece_selected(piece : Piece):
 	print("Piece selected")
 	selected_piece = piece
-	board.show_interaction_for_piece(piece)
 	
 
 func on_piece_unselected(piece : Piece):
 	if selected_piece == piece:
-		print("Piece unselected")
 		selected_piece = null
-		SignalHub.turn_selection_phase.emit(current_player,current_turn)
 
 
 func _on_pause_button_pressed():
