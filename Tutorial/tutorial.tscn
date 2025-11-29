@@ -1,0 +1,161 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqplwl5ytdgoe"]
+
+[ext_resource type="Script" uid="uid://51ngy8xfr0tq" path="res://Tutorial/tutorial_menu.gd" id="1_owc84"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_owc84")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -554.0
+offset_right = 554.0
+offset_bottom = 838.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "PIECES OF THE FAMILY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pawnExplain" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Pawn" type="Label" parent="HBoxContainer/VBoxContainer/pawnExplain"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "PAWN"
+horizontal_alignment = 1
+
+[node name="pawnImage" type="Panel" parent="HBoxContainer/VBoxContainer/pawnExplain"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+
+[node name="pawnText" type="Label" parent="HBoxContainer/VBoxContainer/pawnExplain"]
+custom_minimum_size = Vector2(750, 160)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Pawn is your good old friend. His only goal is to become a new king. That's why he can only move forward and sideways, no turning back at this point. Protect them at all cost only them can become the new leader of one coloured army. "
+autowrap_mode = 3
+
+[node name="rookExplain" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Rook" type="Label" parent="HBoxContainer/VBoxContainer/rookExplain"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "ROOK"
+horizontal_alignment = 1
+
+[node name="rookImage" type="Panel" parent="HBoxContainer/VBoxContainer/rookExplain"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+
+[node name="rookText" type="Label" parent="HBoxContainer/VBoxContainer/rookExplain"]
+custom_minimum_size = Vector2(750, 160)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Rook is a Tower. Strong and Tall. This piece is a tank, which can attack only one spot in the direction is moving. He can protect nearby friends in one block radius."
+autowrap_mode = 3
+
+[node name="knightExplain" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Knight" type="Label" parent="HBoxContainer/VBoxContainer/knightExplain"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "KNIGHT"
+horizontal_alignment = 1
+
+[node name="KnightImage" type="Panel" parent="HBoxContainer/VBoxContainer/knightExplain"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+
+[node name="knightText" type="Label" parent="HBoxContainer/VBoxContainer/knightExplain"]
+custom_minimum_size = Vector2(750, 160)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Knight also known as hopper he jumps over the pieces in classical L shape pattern. He also attack L shape patterns but smaller."
+autowrap_mode = 1
+
+[node name="bishopExplain" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Bishop" type="Label" parent="HBoxContainer/VBoxContainer/bishopExplain"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "BISHOP"
+horizontal_alignment = 1
+
+[node name="BishopImage" type="Panel" parent="HBoxContainer/VBoxContainer/bishopExplain"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+
+[node name="bishopText" type="Label" parent="HBoxContainer/VBoxContainer/bishopExplain"]
+custom_minimum_size = Vector2(750, 160)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Bishop runs around diagonally stabing with spear poor enemies in front. If he is fast enough, he will pierce opponent dealing damage to 2 piece in front of his crazy path."
+autowrap_mode = 3
+
+[node name="queenExplain" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Queen" type="Label" parent="HBoxContainer/VBoxContainer/queenExplain"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "QUEEN"
+horizontal_alignment = 1
+
+[node name="QueenImage" type="Panel" parent="HBoxContainer/VBoxContainer/queenExplain"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+
+[node name="queenText" type="Label" parent="HBoxContainer/VBoxContainer/queenExplain"]
+custom_minimum_size = Vector2(750, 160)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Queen your favorite Lady of the kingdom powerfull and beatiful. She can attack over 1 tile radius all enemies, the less the enemies the more she strikes."
+autowrap_mode = 1
+
+[node name="GoBackPanel" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Back_to_main_menu" type="Button" parent="GoBackPanel"]
+custom_minimum_size = Vector2(380, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="GoBackPanel/Back_to_main_menu" to="." method="_on_back_to_main_menu_pressed"]
