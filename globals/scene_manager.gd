@@ -2,6 +2,7 @@ extends Node
 
 @export var main_menu_scene : PackedScene = preload("res://main_menu/main_menu.tscn")
 @export var gameplay_scene : PackedScene = preload("res://core/gameplay_scene.tscn")
+@export var tutorial_scene : PackedScene = preload("res://Tutorial/tutorial.tscn")
 
 func _ready():
 	SignalHub.start_new_game.connect(switch_to_gameplay)
@@ -14,4 +15,8 @@ func switch_to_gameplay():
 	
 func swtich_to_main_menu():
 	get_tree().change_scene_to_packed(main_menu_scene)
+	
+func switch_to_tutorial():
+	get_tree().change_scene_to_packed(tutorial_scene)
+	
 	

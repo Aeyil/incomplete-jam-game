@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://datkab0bnrsvs"]
+[gd_scene load_steps=4 format=3 uid="uid://datkab0bnrsvs"]
 
 [ext_resource type="Script" uid="uid://vpv4fp2vqdv" path="res://pieces/pawn.gd" id="1_cuhp4"]
+[ext_resource type="Texture2D" uid="uid://dvs55ard58q33" path="res://assets/PawnWhite.png" id="2_u65h4"]
+[ext_resource type="Texture2D" uid="uid://bidp4fl6k0n8u" path="res://assets/PawnBlack.png" id="3_vbnim"]
 
-[node name="Pawn" type="Control"]
+[node name="Pawn" type="Control" node_paths=PackedStringArray("texture")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,13 +12,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cuhp4")
+white_texture = ExtResource("2_u65h4")
+black_texture = ExtResource("3_vbnim")
+texture = NodePath("TextureRect")
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
