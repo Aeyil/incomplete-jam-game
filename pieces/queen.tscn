@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://hwdgp7amjkql"]
+[gd_scene load_steps=6 format=3 uid="uid://hwdgp7amjkql"]
 
 [ext_resource type="Script" uid="uid://bvjgy0rq8miyu" path="res://pieces/queen.gd" id="1_shiw1"]
 [ext_resource type="Texture2D" uid="uid://ctsmhvyfluxw1" path="res://assets/QueenWhite.png" id="2_mu52i"]
 [ext_resource type="Texture2D" uid="uid://bpyy4d8jiv8e2" path="res://assets/QueenBlack.png" id="3_ew50n"]
+[ext_resource type="AudioStream" uid="uid://bijqbklc53nye" path="res://Sounds/queen.wav" id="4_2fill"]
+[ext_resource type="Script" uid="uid://cbpew0vw18a00" path="res://pieces/PlaySound.gd" id="5_5jx83"]
 
 [node name="Queen" type="Control" node_paths=PackedStringArray("button", "texture")]
 layout_mode = 3
@@ -34,5 +36,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2fill")
+volume_db = 2.863
+script = ExtResource("5_5jx83")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

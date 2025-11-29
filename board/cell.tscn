@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://6j0qjseddsm7"]
+[gd_scene load_steps=4 format=3 uid="uid://6j0qjseddsm7"]
 
 [ext_resource type="Script" uid="uid://blm4yqxc634c1" path="res://board/cell.gd" id="1_yh0nt"]
+[ext_resource type="AudioStream" uid="uid://cnrd1am3k8mqh" path="res://Sounds/Select.wav" id="2_xe3va"]
+[ext_resource type="AudioStream" uid="uid://c0lpsk3qjdes5" path="res://Sounds/placedown.wav" id="3_1y30p"]
 
 [node name="Cell" type="Panel" node_paths=PackedStringArray("cell_button")]
 custom_minimum_size = Vector2(45, 45)
@@ -32,5 +34,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="SelectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xe3va")
+
+[node name="PlaceDown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1y30p")
 
 [connection signal="pressed" from="InteractableButton" to="." method="_on_interactable_button_pressed"]
