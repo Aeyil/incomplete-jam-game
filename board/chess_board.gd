@@ -29,6 +29,10 @@ var pieces_black : Array[Piece] = []
 
 func _ready():
 	columns = cell_columns
+	
+	SignalHub.piece_died.connect(on_piece_died)
+	SignalHub.piece_selected.connect(on_piece_selected)
+	
 	fill_board_with_cells()
 	spawn_pieces()
 	add_pieces_to_board()
@@ -171,10 +175,13 @@ func add_pieces_to_board():
 			all_cells[queen_anchor_pos + 1].move_piece(pieces_white[piece_index])
 			all_cells[queen_anchor_pos + right_offset - 1].move_piece(pieces_black[piece_index])
 			
-	
-func show_interaction_for_player(player : Enum.PLAYER, turn : Enum.TURN):
-	pass 
-	
-	
-func show_interaction_for_piece(piece : Piece):
+
+func on_piece_died(piece: Piece):
+	if piece.owning_player == Enum.PLAYER.WHITE:
+		pieces_white.erase(piece)
+	else:
+		pieces_black.erase(piece)
+		
+func on_piece_selected(piece: Piece):
+	# Set all posible destionations to be possibly interactable
 	pass

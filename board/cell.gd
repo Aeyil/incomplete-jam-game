@@ -2,13 +2,17 @@ extends Panel
 
 class_name Cell
 
-signal cell_chosen(cell_number: int)
-
 @export var cell_button : Button
 
 var current_piece : Piece
 var cell_number : int = 0
 var cell_type : Enum.CELLTYPE
+
+var is_possibly_interactable : bool
+
+func _ready():
+	SignalHub.piece_died.connect(on_piece_died)
+	SignalHub.piece_unselected.connect(on_piece_unselected)
 
 func set_color(color : Color, type : Enum.CELLTYPE):
 	cell_type = type
@@ -22,8 +26,11 @@ func set_length(length : float):
 	
 
 func set_interactable(is_interactable : bool):
-		cell_button.disabled = !is_interactable || current_piece == null
-		if is_interactable: 
+	is_possibly_interactable = is_interactable
+	
+
+func update_interaction():
+		if is_possibly_interactable and current_piece == null: 
 			show_interaction_overlay() 
 		else: 
 			hide_interation_overlay()
@@ -31,7 +38,8 @@ func set_interactable(is_interactable : bool):
 
 func move_piece(piece: Piece):
 	current_piece = piece
-	set_interactable(false)		
+	set_interactable(false)
+	add_child(current_piece)
 
 
 func show_interaction_overlay():
@@ -52,4 +60,15 @@ func hide_damage_overlay():
 
 
 func _on_interactable_button_pressed():
-	cell_chosen.emit(cell_number)
+	SignalHub.cell_chosen.emit(cell_number)
+
+
+func on_piece_died(piece: Piece):
+	if current_piece == piece:
+		current_piece = null
+		update_interaction()
+		
+		
+func on_piece_unselected(piece : Piece):
+	is_possibly_interactable = false
+	update_interaction()

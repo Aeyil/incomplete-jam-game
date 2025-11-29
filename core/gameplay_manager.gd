@@ -11,19 +11,15 @@ var current_turn : Enum.TURN
 var selected_piece : Piece
 
 func _ready():
-	for cell in board.all_cells:
-		cell.cell_chosen.connect(on_cell_chosen)
-	for piece in board.pieces_white:
-		piece.piece_selected.connect(on_piece_selected)
-		piece.piece_unselected.connect(on_piece_unselected)
-	for piece in board.pieces_black:
-		piece.piece_selected.connect(on_piece_selected)
-		piece.piece_unselected.connect(on_piece_unselected)
+	SignalHub.cell_chosen.connect(on_cell_chosen)
+	SignalHub.piece_selected.connect(on_piece_selected)
+	SignalHub.piece_unselected.connect(on_piece_unselected)
 	start()
 
 
 func start():
-	board.show_interaction_for_player(current_player,current_turn)
+	SignalHub.turn_selection_phase.emit(current_player,current_turn)
+
 
 func on_cell_chosen(cell_number: int):
 	print(cell_number)
@@ -41,7 +37,7 @@ func on_piece_unselected(piece : Piece):
 	if selected_piece == piece:
 		print("Piece unselected")
 		selected_piece = null
-		board.show_interaction_for_player(current_player,current_turn)
+		SignalHub.turn_selection_phase.emit(current_player,current_turn)
 
 
 func _on_pause_button_pressed():
@@ -57,4 +53,4 @@ func end_turn():
 		else:
 			current_player = Enum.PLAYER.WHITE
 		current_turn = Enum.TURN.ATTACK
-	board.show_interaction_for_player(current_player,current_turn)
+	SignalHub.turn_selection_phase.emit(current_player,current_turn)

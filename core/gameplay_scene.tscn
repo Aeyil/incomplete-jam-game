@@ -16,20 +16,18 @@ board = NodePath("Board")
 
 [node name="Board" type="GridContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -400.0
-offset_right = 400.0
-offset_bottom = 400.0
+offset_left = -475.0
+offset_top = 24.0
+offset_right = 475.0
+offset_bottom = 974.0
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("2_wvq6k")
-cell_columns = 15
-cell_rows = 15
+cell_columns = 8
+cell_rows = 8
+board_length = 950
 cell_object = ExtResource("3_0hpuc")
 
 [node name="PauseButton" type="Button" parent="."]
