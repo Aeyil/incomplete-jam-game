@@ -8,8 +8,10 @@ signal cell_chosen(cell_number: int)
 
 var current_piece : Piece
 var cell_number : int = 0
+var cell_type : Enum.CELLTYPE
 
-func set_color(color : Color):
+func set_color(color : Color, type : Enum.CELLTYPE):
+	cell_type = type
 	var stylebox := StyleBoxFlat.new()
 	stylebox.bg_color = color
 	cell_button.add_theme_stylebox_override("normal",stylebox)
