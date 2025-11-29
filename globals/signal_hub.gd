@@ -6,7 +6,7 @@ signal end_current_game()
 signal turn_selection_phase(player : Enum.PLAYER, turn: Enum.TURN)
 signal piece_selected(piece : Piece)
 signal piece_unselected(piece : Piece)
-signal cell_chosen(cell_number : int)
+signal cell_chosen(cell: Cell)
 signal piece_died(piece : Piece)
 
 
@@ -25,11 +25,14 @@ func on_turn_selection_phase(player : Enum.PLAYER, turn: Enum.TURN):
 func on_piece_selected(piece : Piece):
 	print("PIECE_SELECTED fired.")
 	
+	
 func on_piece_unselected(piece : Piece):
 	print("PIECE_UNSELECTED fired.")
 
-func on_cell_chosen(cell_number : int):
+
+func on_cell_chosen(cell: Cell):
 	print("CELL_CHOSEN fired.")
+	
 	
 func on_piece_died(piece : Piece):
 	print("PIECE_DIED fired.")
