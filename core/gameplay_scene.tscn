@@ -28,6 +28,8 @@ offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_wvq6k")
+cell_columns = 15
+cell_rows = 15
 cell_object = ExtResource("3_0hpuc")
 
 [node name="PauseButton" type="Button" parent="."]

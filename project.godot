@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalHub="*res://globals/signal_hub.gd"
 SceneManager="*res://globals/scene_manager.gd"
+Enum="*res://globals/enum.gd"
 
 [display]
 
