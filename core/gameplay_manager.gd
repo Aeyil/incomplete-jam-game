@@ -14,11 +14,11 @@ func _ready():
 	for cell in board.all_cells:
 		cell.cell_chosen.connect(on_cell_chosen)
 	for piece in board.pieces_white:
-		piece.piece_selected(on_piece_selected)
-		piece.piece_unselected(on_piece_unselected)
+		piece.piece_selected.connect(on_piece_selected)
+		piece.piece_unselected.connect(on_piece_unselected)
 	for piece in board.pieces_black:
-		piece.piece_selected(on_piece_selected)
-		piece.piece_unselected(on_piece_unselected)
+		piece.piece_selected.connect(on_piece_selected)
+		piece.piece_unselected.connect(on_piece_unselected)
 	start()
 
 

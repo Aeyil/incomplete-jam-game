@@ -31,6 +31,7 @@ func _ready():
 	columns = cell_columns
 	fill_board_with_cells()
 	spawn_pieces()
+	add_pieces_to_board()
 	
 	
 func fill_board_with_cells():
@@ -57,18 +58,33 @@ func fill_board_with_cells():
 func spawn_pieces():
 	pieces_white = []
 	pieces_black = []
-	for player in Enum.PLAYER:
+	for player in Enum.PLAYER.values():
 		var spawn_counter = 0
 		for amount_index in piece_amount.size()-1:
 			for i in piece_amount[amount_index]-1:
 				var new_piece : Piece = piece_scenes[amount_index].instantiate()
-				new_piece.set_player(player)
+				#new_piece.set_player()
 				if player == Enum.PLAYER.WHITE:
+					print("test_white")
 					pieces_white.push_back(new_piece)
 				else:
+					print("test_black")
 					pieces_black.push_back(new_piece)
 				spawn_counter += 1
 		print("Pieces Spawned:")
 		print(spawn_counter)
 	
 	
+func add_pieces_to_board():
+	if cell_rows < pieces_white.size()/2.0:
+		print("Not enough rows to house pieces")
+		return
+	
+	#var right_offset : int = 
+	
+func show_interaction_for_player(player : Enum.PLAYER, turn : Enum.TURN):
+	pass
+	
+	
+func show_interaction_for_piece(piece : Piece):
+	pass
