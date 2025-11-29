@@ -14,8 +14,8 @@ var is_selected : bool = false
 var is_selectable : bool = false
 var is_selectable_in_turn : bool = false
 
-var health : float = 100.0
-var damage : float = 50.0
+@export var health : float = 100.0
+@export var damage : float = 50.0
 
 func _ready():
 	SignalHub.turn_selection_phase.connect(on_turn_selection_phase)
