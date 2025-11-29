@@ -19,19 +19,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = -20.0
+offset_top = -39.0
 offset_right = 100.0
-offset_bottom = 20.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="MenuPanel"]
+custom_minimum_size = Vector2(380, 75)
 layout_mode = 2
 text = "START GAME (2P)"
 
 [node name="HowToPlayButton" type="Button" parent="MenuPanel"]
+custom_minimum_size = Vector2(380, 75)
 layout_mode = 2
 text = "HOW TO PLAY"
+
+[node name="ExitButton" type="Button" parent="MenuPanel"]
+custom_minimum_size = Vector2(380, 75)
+layout_mode = 2
+text = "EXIT"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -53,3 +60,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="MenuPanel/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuPanel/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="MenuPanel/ExitButton" to="." method="_on_exit_button_pressed"]
